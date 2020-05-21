@@ -12,7 +12,11 @@ public class Note {
     @ColumnInfo(name = "text")
     public String text;
 
-    public Note(String text) {
+    @ColumnInfo(name = "title")
+    public String title;
+
+    public Note(String title, String text) {
+        this.title = title;
         this.text = text;
     }
 }

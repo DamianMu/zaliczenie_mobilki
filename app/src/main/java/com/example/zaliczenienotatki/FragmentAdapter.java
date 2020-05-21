@@ -31,6 +31,6 @@ class FragmentAdapter extends FragmentStatePagerAdapter {
         if(position==0){
             return "Dodaj notatke";
         }
-        return "Wykres";
+        return "Historyczne notatki";
     }
 }
