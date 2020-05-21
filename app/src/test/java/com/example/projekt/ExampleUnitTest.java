@@ -1,4 +1,4 @@
-package com.example.zaliczenienotatki;
+package com.example.projekt;
 
 import org.junit.Test;
 

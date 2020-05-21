@@ -1,4 +1,4 @@
-package com.example.zaliczenienotatki;
+package com.example.projekt;
 
 import android.os.Bundle;
 
@@ -11,56 +11,60 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Spinner;
+
+import com.example.projekt.R;
 
 import java.util.List;
 
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link AddNoteFragment#newInstance} factory method to
+ * Use the {@link AddTaskFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class AddNoteFragment extends Fragment {
+public class AddTaskFragment extends Fragment {
 
     private AppDatabase db;
-    private NoteDao noteDao;
-    private EditText noteText;
-    private EditText noteTitle;
-    private Button addNote;
+    private TaskDao taskDao;
+    private EditText taskDescription;
+    private EditText taskTitle;
+    private Button addTask;
+    private EditText taskStatus;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_add_note, container, false);
+        return inflater.inflate(R.layout.fragment_add_task, container, false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         db = AppDatabase.getInstance(getContext());
-        noteDao = db.noteDao();
+        taskDao = db.taskDao();
 
-        noteText = view.findViewById(R.id.et_note_text);
-        noteTitle = view.findViewById(R.id.et_note_title);
-        addNote = view.findViewById(R.id.bt_add_note);
+        taskDescription = view.findViewById(R.id.task_description);
+        taskTitle = view.findViewById(R.id.task_title);
+        addTask = view.findViewById(R.id.add_task_button);
+        taskStatus = view.findViewById(R.id.task_status);
 
-        addNote.setOnClickListener(new View.OnClickListener() {
+        addTask.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                String titleValue = noteTitle.getText().toString();
-                String textValue = noteText.getText().toString();
+                String titleValue = taskTitle.getText().toString();
+                String descriptionValue = taskDescription.getText().toString();
+                String statusValue = taskStatus.getText().toString();
 
-                if (titleValue.isEmpty() && textValue.isEmpty()){
+                if (titleValue.isEmpty() && descriptionValue.isEmpty() && statusValue.isEmpty()){
                     return;
                 }
 
-                noteDao.insertAll(new Note(titleValue, textValue));
-                List<Note> noteList = noteDao.getAll();
-                noteTitle.setText("");
-                noteText.setText("");
+                taskDao.insertAll(new Task(titleValue, descriptionValue, statusValue));
+                taskTitle.setText("Title");
+                taskDescription.setText("Description...");
+                taskStatus.setText("Status");
             }
         });
 

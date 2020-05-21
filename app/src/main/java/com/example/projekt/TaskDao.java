@@ -1,4 +1,4 @@
-package com.example.zaliczenienotatki;
+package com.example.projekt;
 
 import androidx.room.Dao;
 import androidx.room.Delete;
@@ -8,19 +8,22 @@ import androidx.room.Query;
 import java.util.List;
 
 @Dao
-public abstract class NoteDao {
-    @Query("SELECT * FROM note")
-    public abstract List<Note> getAll();
+public abstract class TaskDao {
+    @Query("SELECT * FROM task")
+    public abstract List<Task> getAll();
 
-    @Query("SELECT * FROM note WHERE uid =:uid LIMIT 1")
-    public abstract Note findById(int uid);
+    @Query("SELECT * FROM task WHERE uid =:uid LIMIT 1")
+    public abstract Task findById(int uid);
 
-    @Query("SELECT * FROM note ORDER BY uid DESC LIMIT 1")
-    public abstract Note last();
+    @Query("SELECT * FROM task ORDER BY uid DESC LIMIT 1")
+    public abstract Task last();
+
+    @Query("SELECT COUNT(*) FROM task")
+    public abstract Integer count();
 
     @Insert
-    public abstract void insertAll(Note... note);
+    public abstract void insertAll(Task... task);
 
     @Delete
-    public abstract void delete(Note note);
+    public abstract void delete(Task task);
 }

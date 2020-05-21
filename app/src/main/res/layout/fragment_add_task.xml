@@ -8,37 +8,58 @@
     tools:context="com.example.projekt.MainActivity">
 
     <Button
-        android:id="@+id/bt_add_task"
+        android:id="@+id/add_task_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
-        android:text="Dodaj notatke"
+        android:layout_marginTop="8dp"
+        android:text="Create"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_task_text" />
+        app:layout_constraintTop_toBottomOf="@+id/task_description" />
 
     <EditText
-        android:id="@+id/et_task_text"
-        android:layout_width="245dp"
+        android:id="@+id/task_description"
+        android:layout_width="381dp"
         android:layout_height="0dp"
+        android:layout_marginBottom="108dp"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
+        android:text="Description..."
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_task_title" />
+        app:layout_constraintTop_toBottomOf="@+id/task_status" />
 
     <EditText
-        android:id="@+id/et_task_title"
+        android:id="@+id/task_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="74dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="72dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:text="Title"
+        app:layout_constraintBottom_toTopOf="@+id/task_description"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/task_status"
+        app:layout_constraintHorizontal_bias="0.08"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/task_status"
+        android:layout_width="168dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="14dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Status"
+        app:layout_constraintBottom_toTopOf="@+id/task_description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/task_title"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

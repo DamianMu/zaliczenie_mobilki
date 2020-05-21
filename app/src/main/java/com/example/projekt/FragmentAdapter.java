@@ -1,4 +1,4 @@
-package com.example.zaliczenienotatki;
+package com.example.projekt;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -16,8 +16,8 @@ class FragmentAdapter extends FragmentStatePagerAdapter {
     @Override
     public Fragment getItem(int position) {
         if(position==0)
-            return new AddNoteFragment();
-        return new AddNoteFragment();
+            return new AddTaskFragment();
+        return new AddTaskFragment();
     }
 
     @Override
@@ -29,8 +29,8 @@ class FragmentAdapter extends FragmentStatePagerAdapter {
     @Override
     public CharSequence getPageTitle(int position) {
         if(position==0){
-            return "Dodaj notatke";
+            return "Create a task";
         }
-        return "Historyczne notatki";
+        return "Task list";
     }
 }

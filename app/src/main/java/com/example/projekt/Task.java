@@ -1,11 +1,11 @@
-package com.example.zaliczenienotatki;
+package com.example.projekt;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity
-public class Note {
+public class Task {
     @PrimaryKey(autoGenerate = true)
     public int uid;
 
@@ -15,8 +15,12 @@ public class Note {
     @ColumnInfo(name = "title")
     public String title;
 
-    public Note(String title, String text) {
-        this.title = title;
+    @ColumnInfo(name = "status")
+    public String status;
+
+    public Task(String text, String title, String status) {
         this.text = text;
+        this.title = title;
+        this.status = status;
     }
 }

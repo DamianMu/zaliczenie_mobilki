@@ -1,9 +1,11 @@
-package com.example.zaliczenienotatki;
+package com.example.projekt;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
+
+import com.example.projekt.R;
 
 public class MainActivity extends AppCompatActivity {
 
