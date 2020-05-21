@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:tag="unique_tag"
-    tools:context=".MainActivity">
+    tools:context="com.example.projekt.MainActivity">
 
     <Button
-        android:id="@+id/bt_add_note"
+        android:id="@+id/bt_add_task"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
@@ -16,10 +16,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_note_text" />
+        app:layout_constraintTop_toBottomOf="@+id/et_task_text" />
 
     <EditText
-        android:id="@+id/et_note_text"
+        android:id="@+id/et_task_text"
         android:layout_width="245dp"
         android:layout_height="0dp"
         android:ems="10"
@@ -27,10 +27,10 @@
         android:inputType="textMultiLine"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_note_title" />
+        app:layout_constraintTop_toBottomOf="@+id/et_task_title" />
 
     <EditText
-        android:id="@+id/et_note_title"
+        android:id="@+id/et_task_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="74dp"
