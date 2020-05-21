@@ -22,12 +22,6 @@ import java.util.ArrayList;
  */
 public class TaskListFragment extends Fragment {
 
-    private AppDatabase db;
-    private TaskDao taskDao;
-    private EditText taskDescription;
-    private EditText taskTitle;
-    private Button addTask;
-
     final ArrayList<String> arrayList=new ArrayList<>();
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -39,8 +33,6 @@ public class TaskListFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        db = AppDatabase.getInstance(getContext());
-        taskDao = db.taskDao();
 
         ListView listView =view.findViewById(R.id.lv_tasks);
 

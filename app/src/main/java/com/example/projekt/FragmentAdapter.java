@@ -17,7 +17,7 @@ class FragmentAdapter extends FragmentStatePagerAdapter {
     public Fragment getItem(int position) {
         if(position==0)
             return new AddTaskFragment();
-        return new AddTaskFragment();
+        return new TaskListFragment();
     }
 
     @Override
