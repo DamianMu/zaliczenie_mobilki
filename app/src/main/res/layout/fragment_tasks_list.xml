@@ -7,7 +7,7 @@
     android:layout_height="match_parent">
 
     <ListView
-        android:id="@+id/lv_tasks"
+        android:id="@+id/task_list"
         android:layout_width="305dp"
         android:layout_height="544dp"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -14,12 +14,6 @@ import androidx.fragment.app.Fragment;
 
 import java.util.ArrayList;
 
-
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link TaskListFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class TaskListFragment extends Fragment {
 
     final ArrayList<String> arrayList=new ArrayList<>();
@@ -27,14 +21,14 @@ public class TaskListFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_task_list, container, false);
+        return inflater.inflate(R.layout.fragment_tasks_list, container, false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        ListView listView =view.findViewById(R.id.lv_tasks);
+        ListView listView =view.findViewById(R.id.task_list);
 
         TaskAdapter taskAdapter = new TaskAdapter(getContext());
         listView.setAdapter(taskAdapter);

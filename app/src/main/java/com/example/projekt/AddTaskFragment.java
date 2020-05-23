@@ -16,12 +16,6 @@ import com.example.projekt.R;
 
 import java.util.List;
 
-
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link AddTaskFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class AddTaskFragment extends Fragment {
 
     private AppDatabase db;
@@ -61,7 +55,7 @@ public class AddTaskFragment extends Fragment {
                     return;
                 }
 
-                taskDao.insertAll(new Task(titleValue, descriptionValue, statusValue));
+                taskDao.insertAll(new Task(descriptionValue, titleValue, statusValue));
                 taskTitle.setText("Title");
                 taskDescription.setText("Description...");
                 taskStatus.setText("Status");

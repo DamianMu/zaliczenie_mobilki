@@ -9,8 +9,8 @@ public class Task {
     @PrimaryKey(autoGenerate = true)
     public int uid;
 
-    @ColumnInfo(name = "text")
-    public String text;
+    @ColumnInfo(name = "description")
+    public String description;
 
     @ColumnInfo(name = "title")
     public String title;
@@ -18,8 +18,8 @@ public class Task {
     @ColumnInfo(name = "status")
     public String status;
 
-    public Task(String text, String title, String status) {
-        this.text = text;
+    public Task(String description, String title, String status) {
+        this.description = description;
         this.title = title;
         this.status = status;
     }

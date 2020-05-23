@@ -37,19 +37,21 @@ public class TaskAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View rowView = inflater.inflate(R.layout.task_item, parent, false);
+        View rowView = inflater.inflate(R.layout.tasks, parent, false);
 
         Task task = taskDao.findById(position + 1);
 
-        TextView firstLine = rowView.findViewById(R.id.firstLine);
-        TextView secondLine = rowView.findViewById(R.id.secondLine);
+        TextView title = rowView.findViewById(R.id.show_title);
+        TextView description = rowView.findViewById(R.id.show_description);
+        TextView status = rowView.findViewById(R.id.show_status);
 
         if (task == null){
             return rowView;
         }
 
-        firstLine.setText(task.title);
-        secondLine.setText(task.text);
+        title.setText(task.title);
+        description.setText(task.description);
+        status.setText(task.status);
         return rowView;
     }
 }
