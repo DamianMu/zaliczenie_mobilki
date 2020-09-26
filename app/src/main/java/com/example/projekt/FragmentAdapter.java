@@ -17,12 +17,15 @@ class FragmentAdapter extends FragmentStatePagerAdapter {
     public Fragment getItem(int position) {
         if(position==0)
             return new AddTaskFragment();
-        return new TaskListFragment();
+        else if(position == 1)
+            return new TaskListFragment();
+        else
+            return new SensorFragment();
     }
 
     @Override
     public int getCount() {
-        return 2;
+        return 3;
     }
 
     @Nullable
@@ -30,7 +33,10 @@ class FragmentAdapter extends FragmentStatePagerAdapter {
     public CharSequence getPageTitle(int position) {
         if(position==0){
             return "Create a task";
+        } else if(position == 1 ){
+            return "Task list";
         }
-        return "Task list";
+
+        return "Sensors";
     }
 }
